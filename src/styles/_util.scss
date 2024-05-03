@@ -1,0 +1,21 @@
+@use './variable' as v;
+
+@mixin mq($alias) {
+	@if $alias == 'tablet' {
+		@media #{v.$tablet} {
+			@content;
+		}
+	} @else if $alias == 'desk' {
+		@media #{v.$desk} {
+			@content;
+		}
+	} @else if $alias == 'widescreen' {
+		@media #{v.$widescreen} {
+			@content;
+		}
+	} @else if $alias == 'fullhd' {
+		@media #{v.$fullhd} {
+			@content;
+		}
+	}
+}

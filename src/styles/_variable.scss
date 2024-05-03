@@ -1,0 +1,34 @@
+/*
+    1. COLOR
+    2. FONT-STYLE
+    3. LAYOUT
+    4. RESPONSIVE
+*/
+
+// 1. COLOR
+$color-primary: #06c;
+$color-light-primary: #84dbf6;
+$color-primary-hover: #15437c;
+$color-secondary: #ffcf3d;
+$color-surface: #c6dfff;
+$color-error: #ef4444;
+$color-error-hover: #df3c3c;
+$color-white: #fff;
+$color-light-blue: #e6f0fc;
+$color-text: #4a4a4a;
+
+$color-light-gray: #cbd5e1;
+$color-dark-gray: #a7a7a7;
+$color-semi-gray: #dadada;
+$color-netural-dark-gray: #6f6f6f;
+
+//2. FONT STYLE
+$font-primary: 'Proxima Soft', sans-serif;
+
+//3. LAYOUT
+
+//4. RESPONSIVE
+$tablet: 'screen and (min-width: 768px)';
+$desk: 'screen and (min-width: 1024px)';
+$widescreen: 'screen and (min-width: 1240px)';
+$fullhd: 'screen and (min-width: 1920px)';

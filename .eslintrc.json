@@ -1,0 +1,70 @@
+{
+	"env": {
+		"es6": true
+	},
+  "extends": [
+		"eslint:recommended",
+		"next/core-web-vitals",
+		"plugin:react/recommended",
+		"plugin:import/recommended",
+    "plugin:react/jsx-runtime"
+	],
+	"rules": {
+	  "prefer-const": "error",
+	  "unused-imports/no-unused-imports": "error",
+	  "no-use-before-define": "error",
+	  "no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
+    "@next/next/no-img-element": "off",
+    "simple-import-sort/imports": ["error", {
+      "groups": [
+        // Package next related
+        ["^next"],
+        // Package react related
+        ["^react"],
+        // Other lib
+        ["^@?\\w"],
+        // Internal package
+        ["^@(apis)(/.*|$)"],
+        ["^@(assets)(/.*|$)"],
+        ["^@(commons)(/.*|$)"],
+        ["^@(configs)(/.*|$)"],
+        ["^@(helpers)(/.*|$)"],
+        ["^@(utils)(/.*|$)"],
+				["^@(hooks)(/.*|$)"],
+        ["^@(modules)(/.*|$)"],
+        // Styles import
+        ["^(@styles)(/.scss|$)"],
+        // Parent import
+        ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+        // Same relative import
+        ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"]
+      ]
+    }],
+    "simple-import-sort/exports": "error",
+		"import/no-named-as-default": "off"
+	},
+	"plugins": [
+		"react",
+		"unused-imports",
+		"simple-import-sort"
+	],
+	"settings": {
+		"import/resolver": {
+			"alias": {
+				"map": [
+					["@app", "./app"],
+					["@commons", "./src/commons"],
+					["@modules", "./src/modules"],
+					["@helpers", "./src/helpers"],
+					["@configs", "./src/configs"],
+					["@utils", "./src/utils"],
+					["@apis", "./src/apis"],
+					["@assets", "./src/assets"],
+					["@styles", "./src/styles"],
+          ["@hooks", "./src/hooks"]
+				],
+				"extensions": [".ts", ".tsx", ".js", ".jsx"]
+			}
+		}
+	}
+}

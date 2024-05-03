@@ -1,0 +1,60 @@
+@use 'node_modules/tailwindcss/tailwind.css' as *;
+
+@use './commons';
+@use './modules';
+@use './util' as u;
+@use './variable' as v;
+
+@forward './404.scss';
+@forward './error.scss';
+
+html,
+body {
+	font-size: 62.5%;
+	line-height: 1.5;
+	font-weight: 400;
+}
+
+body {
+	font-family: v.$font-primary;
+	background-color: v.$color-white;
+	color: v.$color-text;
+	overflow: scroll;
+}
+
+input,
+button,
+select {
+	&:focus {
+		outline: none;
+	}
+}
+
+a:hover {
+	color: v.$color-primary;
+}
+
+// TODO: Remove it
+:root {
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--foreground-rgb: 255, 255, 255;
+		--background-start-rgb: 0, 0, 0;
+		--background-end-rgb: 0, 0, 0;
+	}
+}
+
+body {
+	color: rgb(var(--foreground-rgb));
+	background: linear-gradient(
+			to bottom,
+			transparent,
+			rgb(var(--background-end-rgb))
+		)
+		rgb(var(--background-start-rgb));
+}
