@@ -1,0 +1,51 @@
+/* stylelint-disable rule-empty-line-before */
+@use '@/styles/variable' as v;
+
+/* Safari */
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.page-loader-wrapper {
+	gap: 2rem;
+	background-color: black;
+
+	.page-loader-evelingo {
+		height: 30vh;
+		width: 30vh;
+	}
+
+	.page-loader-text {
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+
+	.page-loader-sub-text {
+		font-size: 1.5rem;
+		font-weight: 600;
+		color: #f3f3f3;
+	}
+}
+
+.page-loader {
+	border: 0.5rem solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 0.5rem solid gray;
+	width: 4rem;
+	height: 4rem;
+	animation: spin 0.4s linear infinite;
+}

@@ -1,0 +1,79 @@
+@use '@/styles/variable' as v;
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	/* stylelint-disable-next-line rule-empty-line-before */
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.button {
+	border: 0.1rem solid v.$color-primary;
+	color: v.$color-primary;
+
+	.button-loader {
+		border: 0.3rem solid #f3f3f3;
+		border-radius: 50%;
+		border-top: 0.3rem solid v.$color-primary;
+		width: 2rem;
+		height: 2rem;
+		animation: spin 0.35s linear infinite;
+	}
+
+	&.loading {
+		opacity: 0.5;
+		touch-action: none;
+	}
+
+	&-large {
+		height: 3.5rem;
+		padding: 0.9rem 1.7rem;
+		font-weight: 600;
+		font-size: 1.2rem;
+	}
+
+	&-small {
+		height: 3.6rem;
+		padding: 0.9rem 1rem;
+		font-weight: 400;
+		font-size: 1.4rem;
+	}
+
+	&-secondary {
+		background-color: v.$color-secondary;
+		border: 1px solid v.$color-primary;
+	}
+
+	&-primary {
+		background-color: v.$color-primary;
+		color: v.$color-white;
+	}
+
+	&-info {
+		background-color: v.$color-primary;
+		color: v.$color-white;
+	}
+
+	&-default {
+		background-color: v.$color-surface;
+		color: v.$scolor-blue-primary;
+	}
+
+	&:hover {
+		box-shadow: 0 0 0.7rem 0 v.$color-primary;
+	}
+
+	&:active {
+		background-color: v.$scolor-blue-primary;
+		color: v.$color-white;
+	}
+
+	&:disabled {
+		background-color: v.$scolor-disabled;
+		color: v.$color-white;
+		cursor: not-allowed;
+	}
+}

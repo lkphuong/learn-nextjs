@@ -1,0 +1,10 @@
+/* stylelint-disable selector-class-pattern */
+@use '@/styles/variable' as v;
+
+.notyf__wrapper {
+	.notyf__message {
+		font-size: 1rem;
+		font-family: v.$font-primary;
+		font-weight: 500;
+	}
+}

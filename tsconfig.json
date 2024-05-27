@@ -1,25 +1,30 @@
 {
-  "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "paths": {
-      "@/*": ["./src/*"],
-			"@app/*": ["./app/*"],
+	"compilerOptions": {
+		"target": "ES2020",
+		"useDefineForClassFields": true,
+		"module": "esnext",
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"skipLibCheck": true,
+		"allowJs": true,
+		"esModuleInterop": true,
+		"incremental": true,
+
+		/* Bundler mode */
+		"moduleResolution": "bundler",
+		"allowImportingTsExtensions": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"jsx": "preserve",
+
+		"plugins": [{ "name": "next" }],
+
+		/* Linting */
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+		"paths": {
 			"@commons/*": ["./src/commons/*"],
 			"@modules/*": ["./src/modules/*"],
 			"@helpers/*": ["./src/helpers/*"],
@@ -28,9 +33,14 @@
 			"@apis/*": ["./src/apis/*"],
 			"@assets/*": ["./src/assets/*"],
 			"@styles/*": ["./src/styles/*"],
-      "@hooks/*": ["./src/hooks/*"],
-    }
-  },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+			"@hooks/*": ["./src/hooks/*"],
+			"@pages/*": ["./src/pages/*"],
+			"@types/*": ["./src/types/*"],
+			"@stores/*": ["./src/stores/*"],
+			"@/*": ["./src/*"]
+		}
+	},
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+	"exclude": ["node_modules"]
 }
+

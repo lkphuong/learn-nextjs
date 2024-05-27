@@ -1,0 +1,87 @@
+@use '@/styles/variable.scss' as v;
+
+.form-item-input,
+.form-item-textarea {
+	.form-item-label {
+		font-size: 1.3rem;
+		font-weight: 700;
+		color: v.$color-primary;
+	}
+}
+
+.input,
+.textarea {
+	display: flex;
+	min-height: 2.5rem;
+	width: 100%;
+	padding: 0.9rem 1rem;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	border-radius: 0.5rem;
+	border: 0.1rem solid v.$color-semi-gray;
+	font-size: 1rem;
+	background-color: v.$color-white;
+	color: black;
+
+	&.disabled {
+		background-color: lightgray;
+		cursor: not-allowed;
+	}
+
+	&-prefix,
+	&-suffix {
+		display: flex;
+		color: v.$color-semi-gray;
+	}
+
+	&-prefix {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+
+	&-suffix {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+
+	label {
+		width: 100%;
+	}
+
+	input,
+	textarea {
+		width: 100%;
+		height: 100%;
+		background: transparent;
+
+		&::placeholder {
+			color: #a9a9a9;
+		}
+	}
+
+	textarea {
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&:focus-within {
+		border-color: v.$color-primary;
+		outline: none;
+
+		.input-prefix,
+		.input-suffix {
+			color: v.$color-primary;
+		}
+	}
+
+	&.has-error {
+		border-color: v.$color-error;
+
+		.input-prefix,
+		.input-suffix {
+			color: v.$color-error;
+		}
+	}
+}

@@ -1,25 +1,59 @@
+// External
 @use 'node_modules/tailwindcss/tailwind.css' as *;
-
+@use 'node_modules/notyf/notyf.min.css' as *;
+// Internal
 @use './commons';
 @use './modules';
+@use './libs' as *;
 @use './util' as u;
 @use './variable' as v;
 
 @forward './404.scss';
 @forward './error.scss';
+// @forward './font.scss';
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
 
 html,
 body {
-	font-size: 62.5%;
+	// font-size: 62.5%;
 	line-height: 1.5;
 	font-weight: 400;
 }
 
 body {
 	font-family: v.$font-primary;
-	background-color: v.$color-white;
-	color: v.$color-text;
-	overflow: scroll;
+	background-color: v.$color-light-blue;
+	font-size: v.$font-size-text;
+	background-image: url('/icons/login.svg');
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100%;
+
+	::-webkit-scrollbar {
+		width: 0.6rem;
+		border-radius: 4.9rem;
+		display: block;
+	}
+
+	::-webkit-scrollbar-track {
+		border-radius: 4.9rem;
+		background: #e6f0fc;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	::-webkit-scrollbar-thumb {
+		border-radius: 4.9rem;
+		background: v.$color-primary;
+		border-right: none;
+		border-left: none;
+	}
 }
 
 input,
@@ -34,27 +68,8 @@ a:hover {
 	color: v.$color-primary;
 }
 
-// TODO: Remove it
-:root {
-	--foreground-rgb: 0, 0, 0;
-	--background-start-rgb: 214, 219, 220;
-	--background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--foreground-rgb: 255, 255, 255;
-		--background-start-rgb: 0, 0, 0;
-		--background-end-rgb: 0, 0, 0;
+@include u.mq('widescreen') {
+	.container {
+		max-width: 133.3rem !important;
 	}
-}
-
-body {
-	color: rgb(var(--foreground-rgb));
-	background: linear-gradient(
-			to bottom,
-			transparent,
-			rgb(var(--background-end-rgb))
-		)
-		rgb(var(--background-start-rgb));
 }
